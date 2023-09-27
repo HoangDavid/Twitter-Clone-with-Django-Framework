@@ -1,0 +1,30 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+    <h3 id="view-title">All Posts</h3>
+    <div id="post-view">
+        <div id="profile-info">
+        </div>
+        <div id="new-post">
+            <div class="title">New Post</div>
+            <form id="upload-form">
+                {% csrf_token %}
+                <textarea rows="3" id="upload-content" placeholder="Write something positive today :D"></textarea>
+                <input type="submit" class="btn btn-primary btn-sm" value="Post">
+            </form>
+        </div>
+        <hr>
+        <div id="all-posts-view">
+        </div>
+    </div>
+
+    <nav>
+      <ul class="pagination justify-content-center">
+        <li class="page-item" id="previous-page"><a class="page-link">Previous</a></li>
+          <a id="paginator-view">
+          </a>
+        <li class="page-item" id="next-page"><a class="page-link">Next</a></li>
+      </ul>
+    </nav>
+    
+{% endblock %}
